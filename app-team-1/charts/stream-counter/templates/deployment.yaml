@@ -16,7 +16,8 @@ spec:
         app: stream-counter
     spec:
       containers:
-      - image: registry.upbound.io/dan/stream-counter:v0.0.1
+      - name: stream-counter
+        image: registry.upbound.io/dan/stream-counter:v0.0.1
         env:
         - name: DB_HOST
           valueFrom:
