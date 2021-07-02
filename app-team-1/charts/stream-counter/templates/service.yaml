@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stream-counter-svc
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: stream-counter
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
