@@ -13,7 +13,7 @@ kind: Configuration
 metadata:
   name: my-gcp
 spec:
-  package: registry.upbound.io/dan/my-gcp:v0.0.1
+  package: registry.upbound.io/dan/my-gcp:v0.0.2
   packagePullPolicy: IfNotPresent
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
