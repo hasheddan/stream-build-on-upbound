@@ -4,3 +4,10 @@
 #   name: clusters
 #   annotations:
 #     argocd.argoproj.io/sync-wave: "-1"
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-team-1
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
