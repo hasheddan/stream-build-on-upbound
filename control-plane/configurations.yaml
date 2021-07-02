@@ -1,0 +1,19 @@
+apiVersion: pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name: platform-ref-gcp
+spec:
+  package: registry.upbound.io/upbound/platform-ref-gcp:v0.0.5
+  packagePullPolicy: IfNotPresent
+  revisionActivationPolicy: Automatic
+  revisionHistoryLimit: 1
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name: getting-started-with-gcp
+spec:
+  package: registry.upbound.io/xp/getting-started-with-gcp:v1.3.0
+  packagePullPolicy: IfNotPresent
+  revisionActivationPolicy: Automatic
+  revisionHistoryLimit: 1
