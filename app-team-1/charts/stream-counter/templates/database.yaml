@@ -1,0 +1,13 @@
+apiVersion: database.example.org/v1alpha1
+kind: PostgreSQLInstance
+metadata:
+  name: stream-counter-db
+  namespace: {{ .Values.namespace }}
+spec:
+  parameters:
+    storageGB: 20
+  compositionSelector:
+    matchLabels:
+      provider: gcp
+  writeConnectionSecretToRef:
+    name: {{ .Values.connectionSecret }}

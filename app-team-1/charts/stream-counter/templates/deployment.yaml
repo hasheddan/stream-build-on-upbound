@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stream-counter
+  namespace: app-team-1
+  labels:
+    app: stream-counter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stream-counter
+  template:
+    metadata:
+      labels:
+        app: stream-counter
+    spec:
+      containers:
+      - image: registry.upbound.io/dan/stream-counter:v0.0.1
+        env:
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.connectionSecret }}
+              key: endpoint
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.connectionSecret }}
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.connectionSecret }}
+              key: password
