@@ -1,0 +1,16 @@
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: clusters
+#   namespace: argocd
+#   finalizers:
+#   - resources-finalizer.argocd.argoproj.io
+# spec:
+#   destination:
+#     namespace: infrastructure
+#     server: {{ .Values.spec.destination.server }}
+#   project: default
+#   source:
+#     path: infrastructure/clusters
+#     repoURL: {{ .Values.spec.source.repoURL }}
+#     targetRevision: {{ .Values.spec.source.targetRevision }}
