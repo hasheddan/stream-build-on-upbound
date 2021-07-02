@@ -11,9 +11,9 @@ spec:
 apiVersion: pkg.crossplane.io/v1
 kind: Configuration
 metadata:
-  name: getting-started-with-gcp
+  name: my-gcp
 spec:
-  package: registry.upbound.io/xp/getting-started-with-gcp:v1.3.0
+  package: registry.upbound.io/dan/my-gcp:v0.0.1
   packagePullPolicy: IfNotPresent
   revisionActivationPolicy: Automatic
   revisionHistoryLimit: 1
